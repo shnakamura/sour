@@ -35,10 +35,20 @@ namespace BrainfuckInterpreter
                 {
                     case '>':
                         pointer++;
+
+                        if (pointer > memory.Length)
+                        {
+                            pointer = 0;
+                        }
                         break;
 
                     case '<':
                         pointer--;
+
+                        if (pointer < 0)
+                        {
+                            pointer = memory.Length - 1;
+                        }
                         break;
 
                     case '+':
@@ -50,7 +60,7 @@ namespace BrainfuckInterpreter
                         break;
 
                     case '.':
-                        Console.WriteLine(Convert.ToChar(memory[pointer]));
+                        Console.Write(Convert.ToChar(memory[pointer]));
                         break;
 
                     case ',':
