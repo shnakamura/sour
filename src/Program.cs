@@ -17,7 +17,24 @@ namespace BrainfuckInterpreter
             {
                 foreach (string filePath in args)
                 {
+                    StringBuilder builder = new();
+
+                    builder.Append(Path.GetFileName(filePath));
+                    builder.Append(' ');
+                    builder.Append('=', 50 - Path.GetFileName(filePath).Length);
+
+                    Console.WriteLine(builder);
+                    Console.WriteLine();
+
                     InterpretFile(File.ReadAllText(filePath).ToCharArray());
+
+                    builder = new StringBuilder();
+                    builder.Append('=', 51);
+
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine(builder);
+                    Console.WriteLine();
                 }
             }
 
