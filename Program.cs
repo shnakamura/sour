@@ -11,7 +11,11 @@ public static class Program
             return;
         }
 
+        Console.WriteLine("OUTPUT");
+        Console.WriteLine();
+            
         foreach (string filePath in args) {
+            
             StringBuilder builder = new();
 
             builder.Append(Path.GetFileName(filePath));
@@ -20,14 +24,16 @@ public static class Program
 
             Console.WriteLine(builder);
             Console.WriteLine();
+            Console.WriteLine();
 
             new Interpreter(filePath).Interpret();
 
             builder = new StringBuilder();
             builder.Append('=', 51);
-            builder.AppendLine();
-            builder.AppendLine();
 
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
             Console.WriteLine(builder);
             Console.WriteLine();
         }

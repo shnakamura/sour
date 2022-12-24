@@ -50,7 +50,7 @@ public sealed class Interpreter
                     break;
 
                 case '.':
-                    Console.Write(Memory[memoryPointer]);
+                    Console.Write(Convert.ToChar(Memory[memoryPointer]));
 
                     break;
 
