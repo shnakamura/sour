@@ -14,8 +14,7 @@ public static class Program
         Console.WriteLine("OUTPUT");
         Console.WriteLine();
             
-        foreach (string filePath in args) {
-            
+        foreach (string filePath in args) {       
             StringBuilder builder = new();
 
             builder.Append(Path.GetFileName(filePath));
