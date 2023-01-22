@@ -6,10 +6,8 @@ mod args;
 mod interpreter;
 
 pub fn main() {
-   let args = SourArgs::parse();
-
    let interpreter = Interpreter {
-        args: args
+        args: SourArgs::parse()
    };
 
    interpreter.interpret();
