@@ -23,8 +23,9 @@ pub struct SourArgs {
 
 pub fn main() {
    let args = SourArgs::parse();
+   let path = Path::new(&args.content);
 
-   if Path::new(&args.content).exists() {
+   if path.exists() && path.is_file() {
       match fs::read_to_string(args.content) {
          Ok(content) => Interpreter::interpret(content, args.size, args.raw),
          Err(error) => panic!("Could not read the file {:?}", error)
