@@ -70,22 +70,24 @@ impl Interpreter {
                             while loops > 0 {
                                 char_pointer -= 1;
     
-                                match char {
-                                    '[' => loops -= 1,
-                                    ']' => loops += 1,
-                                    _ => {}
+                                if let Some(char) = content.chars().nth(char_pointer) {
+                                    match char {
+                                        '[' => loops -= 1,
+                                        ']' => loops += 1,
+                                        _ => {}
+                                    }
                                 }
                             }
                         }
                     },
                     _ => { }
                 }
+
+                char_pointer += 1;
             } 
             else {
                 println!("Could not read the {}th char of the given content", char_pointer)
             }
-            
-            char_pointer += 1;
         }
     }
 }
