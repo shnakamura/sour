@@ -2,11 +2,17 @@
 A customizable command line brainfuck interpreter.
 
 ## Installation
-For manual installations, have a look at the [releases](https://github.com/naakaamura/sour/releases) page. 
+> For acquiring the precompiled binaries, have a look at the [releases](https://github.com/naakaamura/sour/releases) page. 
 
-With [Cargo](https://github.com/rust-lang/cargo/):
-
+Building with [Cargo](https://github.com/rust-lang/cargo/):
+```sh
+$ git clone https://github.com/naakaamura/sour.git
+$ cd sour
+$ cargo build --release
 ```
+
+Installing from [Crates.io](https://crates.io)
+```sh
 $ cargo install sour
 ```
 ## Usage
@@ -26,19 +32,19 @@ Options:
 ## Examples
 
 Interpreting from a file
-```
+```sh
 $ sour hello-world.bf
 # OUTPUT: Hello, world!
 ```
 
 Interpreting raw byte values from a file
-```
+```sh
 $ sour hello-world.bf -r
 # OUTPUT: 7210110810811144328711111410810033
 ```
 
 Interpreting from raw brainfuck content
-```
+```sh
 $ sour +++++.
 # OUTPUT: ♣
 ```
