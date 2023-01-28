@@ -11,7 +11,7 @@ $ cd sour
 $ cargo build --release
 ```
 
-Installing from [Crates.io](https://crates.io)
+Installing from [Crates.io](https://crates.io):
 ```sh
 $ cargo install sour
 ```
