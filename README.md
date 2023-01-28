@@ -2,7 +2,7 @@
 A customizable command line brainfuck interpreter.
 
 ## Installation
-For manual installations, have a look at the [releases](https://github.com/naakaamura/sour/releases) page. This does not **currently** support other operational systems than Windows.
+For manual installations, have a look at the [releases](https://github.com/naakaamura/sour/releases) page. 
 
 With [Cargo](https://github.com/rust-lang/cargo/):
 
