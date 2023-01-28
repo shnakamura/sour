@@ -3,7 +3,7 @@ name = "sour"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description = "A customizable brainfuck interpreter."
+description = "A customizable command line brainfuck interpreter."
 
 [dependencies]
 clap = { version = "4.1.1", features = ["derive"] }
