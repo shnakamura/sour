@@ -46,3 +46,8 @@ Interpreting from raw brainfuck content
 $ sour +++++.
 # OUTPUT: ♣
 ```
+
+Interpreting with a custom memory buffer size
+```sh
+$ sour <CONTENT> -s 69420
+```
