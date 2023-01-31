@@ -2,8 +2,6 @@
 A customizable command line brainfuck interpreter.
 
 ## Installation
-> For acquiring the precompiled binaries, have a look at the [releases](https://github.com/naakaamura/sour/releases) page. 
-
 Building with [Cargo](https://github.com/rust-lang/cargo/):
 ```sh
 $ git clone https://github.com/naakaamura/sour.git
