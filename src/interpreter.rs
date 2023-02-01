@@ -31,7 +31,7 @@ impl Interpreter {
                     },
                     '.' => {
                         if raw {
-                            print!("{}", memory_buffer[memory_pointer]);
+                            print!("{} ", memory_buffer[memory_pointer]);
                             continue;
                         }
                         
