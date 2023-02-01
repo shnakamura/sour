@@ -32,10 +32,10 @@ impl Interpreter {
                     '.' => {
                         if raw {
                             print!("{} ", memory_buffer[memory_pointer]);
-                            continue;
                         }
-                        
-                        print!("{}", memory_buffer[memory_pointer] as char);
+                        else {
+                            print!("{}", memory_buffer[memory_pointer] as char);
+                        }
                     },
                     ',' => {
                         let mut input_text = String::new();
