@@ -1,5 +1,3 @@
-use std::fs;
-
 use std::path::Path;
 use clap::Parser;
 use interpreter::Interpreter;
@@ -27,12 +25,12 @@ pub fn main() {
    let path = Path::new(&args.content);
 
    if path.exists() && path.is_file() {
-      match fs::read_to_string(args.content) {
+      match std::fs::read_to_string(args.content) {
          Ok(content) => Interpreter::interpret(content, args.size, args.raw),
          Err(error) => panic!("Could not read the file {:?}", error)
       } 
+      return;
    }
-   else {
-      Interpreter::interpret(args.content, args.size, args.raw);
-   }
+   
+   Interpreter::interpret(args.content, args.size, args.raw);
 }

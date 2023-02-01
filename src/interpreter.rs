@@ -32,20 +32,21 @@ impl Interpreter {
                     '.' => {
                         if raw {
                             print!("{}", memory_buffer[memory_pointer]);
+                            continue;
                         }
-                        else {
-                            print!("{}", memory_buffer[memory_pointer] as char);
-                        }
+                        
+                        print!("{}", memory_buffer[memory_pointer] as char);
                     },
                     ',' => {
                         let mut input_text = String::new();
-    
-                        match std::io::stdin().read_line(&mut input_text) {
-                            Ok(_) => match input_text.trim().parse::<u8>() {
-                                Ok(parsed) => memory_buffer[memory_pointer] = parsed,
-                                Err(error) => println!("Could not parse the user input {:?}", error)
-                            },
-                            Err(error) => println!("Could not read user input {:?}", error)
+
+                        if let Err(error) = std::io::stdin().read_line(&mut input_text) {
+                            println!("Could not read user input {:?}", error);
+                        }
+
+                        match input_text.trim().parse::<u8>() {
+                            Ok(parsed) => memory_buffer[memory_pointer] = parsed,
+                            Err(error) => println!("Could not parse the user input {:?}", error)
                         }
                     },
                     '[' => {
@@ -84,10 +85,10 @@ impl Interpreter {
                 }
 
                 char_pointer += 1;
+                continue;
             } 
-            else {
-                println!("Could not read the {}th char of the given content", char_pointer)
-            }
+
+            println!("Could not read the {}th char of the given content", char_pointer);
         }
     }
 }
