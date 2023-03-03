@@ -38,7 +38,7 @@ $ sour hello-world.bf
 Interpreting raw byte values from a file
 ```sh
 $ sour hello-world.bf -r
-# OUTPUT: 7210110810811144328711111410810033
+# OUTPUT: 72 101 108 108 111 44 32 87 111 114 108 100 33
 ```
 
 Interpreting from raw brainfuck content
